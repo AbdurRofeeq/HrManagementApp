@@ -1,0 +1,31 @@
+
+@model HrMnager_mvc.Entities.Request
+
+<h2>Create New Request</h2>
+<form asp-action="CreateRequest" method="post">
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="EmployeeId">Employee ID</label>
+        <input asp-for="EmployeeId" class="form-control" />
+        <span asp-validation-for="EmployeeId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LeaveStartDate">Leave Start Date</label>
+        <input asp-for="LeaveStartDate" class="form-control" type="date" />
+        <span asp-validation-for="LeaveStartDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LeaveEndDate">Leave End Date</label>
+        <input asp-for="LeaveEndDate" class="form-control" type="date" />
+        <span asp-validation-for="LeaveEndDate" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

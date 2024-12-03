@@ -1,0 +1,25 @@
+@model HrMnager_mvc.Entities.Request
+
+<h2>Request Details</h2>
+<table class="table">
+    <tr>
+        <th>Request ID</th>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td>@Model.Description</td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td>@Model.Status.ToString()</td>
+    </tr>
+    <tr>
+        <th>Date Created</th>
+        <td>@Model.DateCreated</td>
+    </tr>
+    <tr>
+        <th>Date Approved</th>
+        <td>@Model.DateApproved</td>
+    </tr>
+</table>

@@ -1,0 +1,51 @@
+@using HrMnager_mvc.Enums
+@model HrMnager_mvc.Models.RequestModels.CreateHrManagerRequest
+
+@{
+    ViewData["Title"] = "Create HR Manager";
+}
+
+<h1>Create HR Manager</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="FullName"></label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneNumber"></label>
+        <input asp-for="PhoneNumber" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Salary"></label>
+        <input asp-for="Salary" class="form-control" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+      <div class="form-group">
+    <label asp-for="Gender"></label>
+    <div class="btn-group" role="group" aria-label="Gender">
+        <button type="button" class="btn btn-secondary" asp-for="Gender" value="@Gender.Male">Male</button>
+        <button type="button" class="btn btn-secondary" asp-for="Gender" value="@Gender.Female">Female</button>
+    </div>
+    <span asp-validation-for="Gender" class="text-danger"></span>
+</div>
+     <div class="form-group">
+        <label asp-for="DepartmentName"></label>
+        <input asp-for="DepartmentName" class="form-control" />
+        <span asp-validation-for="DepartmentName" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a class="btn btn-secondary" href="/HrManager/Index">Back to List</a>
+</form>

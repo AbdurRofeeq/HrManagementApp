@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\HrMnager_mvc.props" />
+</Project>

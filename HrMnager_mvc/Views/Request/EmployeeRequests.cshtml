@@ -1,0 +1,29 @@
+@model IEnumerable<HrMnager_mvc.Entities.Request>
+<h2>Your Requests</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Request ID</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Date Created</th>
+            <th>Date Approved</th>
+            <th>StartDate</th>
+            <th>EndDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var request in Model)
+        {
+            <tr>
+                <td>@request.Id</td>
+                <td>@request.Description</td>
+                <td>@request.Status.ToString()</td>
+                <td>@request.DateCreated</td>
+                <td>@request.DateApproved</td>
+                <td>@request.LeaveStartDate</td>
+                <td>@request.LeaveEndDate</td>
+            </tr>
+        }
+    </tbody>
+</table>

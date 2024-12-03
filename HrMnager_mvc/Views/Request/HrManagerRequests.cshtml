@@ -1,0 +1,47 @@
+@using HrMnager_mvc.Enums
+@model IEnumerable<HrMnager_mvc.Entities.Request>
+<h2>Department Requests</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Request ID</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Date Created</th>
+            <th>StartDate</th>
+            <th>EndDate</th>
+            <th>Approve</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var request in Model)
+        {
+            <tr>
+                <td>@request.Id</td>
+                <td>@request.Description</td>
+                <td>@request.Status.ToString()</td>
+                <td>@request.DateCreated</td>
+                <td>@request.LeaveStartDate</td>
+                <td>@request.LeaveEndDate</td>
+                <td>
+                    @if (request.Status == RequestStatus.Pending)
+                      {
+                         <div class="d-flex">
+                            <form method="post" action="@Url.Action("ApproveRequest", "Request", new { id = request.Id })" class="mr-2">
+                                <input type="hidden" name="requestId" value="@request.Id" />
+                                <button type="submit" class="btn btn-primary">Approve</button>
+                            </form>
+
+                            <form method="post" action="@Url.Action("RejectRequest", "Request", new { id = request.Id })">
+                                <input type="hidden" name="requestId" value="@request.Id" />
+                                <button type="submit" class="btn btn-primary">Reject</button>
+                            </form>
+                          </div>
+                        }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

@@ -1,0 +1,38 @@
+@model List<HrMnager_mvc.Models.ResponseModel.HrManagerResponse>
+
+
+@{
+    ViewData["Title"] = "HR Manager";
+}
+
+<h1>HR Managers</h1>
+<a class="btn btn-primary" href="/HrManager/Create">Create New HR Manager</a>
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>HrManager</th>
+            <th>Department</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var manager in Model)
+        {
+            <tr>
+                <td>@manager.Id</td>
+                <td>@manager.FullName</td>
+                <td>@manager.DepartmentName</td>
+                <td>
+                    <a class="btn btn-info" href="/HrManager/Details/@manager.Id">Details</a>
+                    <a class="btn btn-warning" href="/HrManager/Edit/@manager.Id">Edit</a>
+                    <form action="/HrManager/Delete/@manager.Id" method="post" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this HR Manager?');">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

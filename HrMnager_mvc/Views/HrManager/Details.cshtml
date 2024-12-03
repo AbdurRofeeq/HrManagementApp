@@ -1,0 +1,21 @@
+@model HrMnager_mvc.Models.ResponseModel.HrManagerDetailResponse
+
+@{
+    ViewData["Title"] = "HR Manager Details";
+}
+
+<h1>HR Manager Details</h1>
+
+<div class="form-group">
+    <label>ID</label>
+    <p class="form-control-static">@Model.Id</p>
+</div>
+<div class="form-group">
+    <label>Name</label>
+    <p class="form-control-static">@Model.FullName</p>
+</div>
+<div class="form-group">
+    <label>Email</label>
+    <p class="form-control-static">@Model.Email</p>
+</div>
+<a class="btn btn-secondary" href="/HrManager/Index">Back to List</a>
